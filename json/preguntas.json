@@ -1,5 +1,5 @@
 {
-	"Questionario": [
+	"Cuestionario": [
 		{
 			"pregunta": "¿Qué es la Acreditación institucional?",
 			"respuestas": [
@@ -8,7 +8,7 @@
 				"oferta y desarrollo de programas académicos de educación superior",
 				"Reconocimiento por parte del Estado que certifica la alta calidad y el impacto en la región y el país"
 			],
-			"correcta": 4
+			"correcta": 3
 		},
 		{
 			"pregunta": "¿En qué fecha se obtuvo la Acreditación Institucional Multicampus?", 
@@ -18,7 +18,7 @@
 	        	"11 de febrero de 2015", 
 	        	"22 de abril de 2013"
 	        ], 
-			"correcta": 2
+			"correcta": 1
 		},
 		{
 			"pregunta":  "¿Cuál de las siguientes afirmaciones corresponde a una de las condiciones para la acreditación institucional multicampus?", 
@@ -28,7 +28,7 @@
 			 	"Hacer un reconocimiento público del logro de altos niveles de calidad", 
 			 	"Contar la certificación ISO 9001:2015"
 			 ],
- 			"correcta": 2
+ 			"correcta": 1
 		},
 		{
 			"pregunta": "¿Qué normas guían el proceso de acreditación institucional multicampus?", 
@@ -38,7 +38,7 @@
 				"Plan Integral Multicampus", 
 				"Decreto 1330 de julio 25 de 2019"
 			],
-			"correcta": 2
+			"correcta": 1
 		},
 		{
 			"pregunta": "¿Cuál es el sentido de renovar la acreditación institucional?", 
@@ -48,7 +48,7 @@
 				"Crear alianzas estratégicas", 
 				"Fortalecer las mesas nacionales"
 			],
-			"correcta": 1	
+			"correcta": 0	
 		},
 		{
 			"pregunta": "¿Quiénes participan en la renovación de Autoevaluación Multicampus?", 
@@ -58,7 +58,7 @@
 				"Los rectores y vicerrectores de las sedes y seccionales", 
 				"Los cuerpos colegiados de la Universidad a nivel nacional"
 			],
-			"correcta": 2
+			"correcta": 1
 		},
 		{
 			"pregunta": "¿Cuántos son los factores que se evalúan en la autoevaluación institucional multicampus?", 
@@ -68,7 +68,7 @@
 				20, 
 				18
 			], 
-			"correcta": 1
+			"correcta": 0
 		},
 		{
 			"pregunta": "¿Cuántas características establecen los lineamientos del CNA?", 
@@ -78,7 +78,7 @@
 				30, 
 				12
 			], 
-			"correcta": 3
+			"correcta": 2
 		},
 		{
 			"pregunta": "¿Quién realiza la evaluación externa en el proceso de Autoevaluación de Acreditación Multicampus?", 
@@ -88,7 +88,7 @@
 				"Icontec", 
 				"Auditores internos"
 			], 
-			"correcta": 2
+			"correcta": 1
 		},
 		{
 			"pregunta": "¿En que año se implementó el modelo de evaluación multicampus en la Universidad?", 
@@ -98,7 +98,7 @@
 				2011, 
 				2018
 			], 
-			"correcta": 2
+			"correcta": 1
 		}
 
 	]
