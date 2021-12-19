@@ -1,0 +1,105 @@
+{
+	"Questionario": [
+		{
+			"pregunta": "¿Qué es la Acreditación institucional?",
+			"respuestas": [
+				"Proyecto Integral de Mejoramiento",
+				"Proyecto Institucional de Mejoramiento",
+				"oferta y desarrollo de programas académicos de educación superior",
+				"Reconocimiento por parte del Estado que certifica la alta calidad y el impacto en la región y el país"
+			],
+			"correcta": 4
+		},
+		{
+			"pregunta": "¿En qué fecha se obtuvo la Acreditación Institucional Multicampus?", 
+	        "respuestas": [
+	        	"20 de enero de 2010", 
+	        	"29 de enero de 2016", 
+	        	"11 de febrero de 2015", 
+	        	"22 de abril de 2013"
+	        ], 
+			"correcta": 2
+		},
+		{
+			"pregunta":  "¿Cuál de las siguientes afirmaciones corresponde a una de las condiciones para la acreditación institucional multicampus?", 
+			"respuestas": [
+			 	"Contar con una certificación internacional", 
+			 	"Cada seccional deberá tener acreditados por lo menos el 40% de sus programas acreditables", 
+			 	"Hacer un reconocimiento público del logro de altos niveles de calidad", 
+			 	"Contar la certificación ISO 9001:2015"
+			 ],
+ 			"correcta": 2
+		},
+		{
+			"pregunta": "¿Qué normas guían el proceso de acreditación institucional multicampus?", 
+			"respuestas": [
+				"ISO 9001:2015", 
+				"Los Lineamientos para la Acreditación Institucional del Consejo Nacional de Acreditación (CNA) 2015.", 
+				"Plan Integral Multicampus", 
+				"Decreto 1330 de julio 25 de 2019"
+			],
+			"correcta": 2
+		},
+		{
+			"pregunta": "¿Cuál es el sentido de renovar la acreditación institucional?", 
+			"respuestas": [
+				"Identificar las fortalezas y las acciones de mejora implementadas en el periodo 2016 – 2020", 
+				"Realizar auditoría externa", 
+				"Crear alianzas estratégicas", 
+				"Fortalecer las mesas nacionales"
+			],
+			"correcta": 1	
+		},
+		{
+			"pregunta": "¿Quiénes participan en la renovación de Autoevaluación Multicampus?", 
+			"respuestas": [
+				"Los estudiantes y los docentes", 
+				"Toda la comunidad universitaria: estudiantes, docentes, administrativos, directivos, egresados, empleadores y aliados estratégicos.", 
+				"Los rectores y vicerrectores de las sedes y seccionales", 
+				"Los cuerpos colegiados de la Universidad a nivel nacional"
+			],
+			"correcta": 2
+		},
+		{
+			"pregunta": "¿Cuántos son los factores que se evalúan en la autoevaluación institucional multicampus?", 
+			"respuestas": [
+				12, 
+				15, 
+				20, 
+				18
+			], 
+			"correcta": 1
+		},
+		{
+			"pregunta": "¿Cuántas características establecen los lineamientos del CNA?", 
+			"respuestas": [
+				18, 
+				23,
+				30, 
+				12
+			], 
+			"correcta": 3
+		},
+		{
+			"pregunta": "¿Quién realiza la evaluación externa en el proceso de Autoevaluación de Acreditación Multicampus?", 
+			"respuestas": [
+				"Auditor Líder", 
+				"Pares académicos", 
+				"Icontec", 
+				"Auditores internos"
+			], 
+			"correcta": 2
+		},
+		{
+			"pregunta": "¿En que año se implementó el modelo de evaluación multicampus en la Universidad?", 
+			"respuestas": [
+				2016, 
+				2015, 
+				2011, 
+				2018
+			], 
+			"correcta": 2
+		}
+
+	]
+}
