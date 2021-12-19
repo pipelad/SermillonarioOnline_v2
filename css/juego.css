@@ -1,0 +1,191 @@
+/* css del juego ***/
+html { width:100%; height:100%; font-size:20px; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; }
+body { width:100%; height:100%; margin:0px; padding:0px; overflow-x:hidden; background-image:url(../images/juegobg.jpg); background-size: cover; background-position: center; }
+@media screen and (min-width:1600px) {
+	html { font-size:24px; }
+}
+@media screen and (max-width:1300px) {
+	html { font-size:18px; }
+}
+@media screen and (max-width:1200px) {
+	html { font-size:16px; }
+}
+@media screen and (max-width:1100px) {
+	html { font-size:14px; }
+}
+
+.rcont {
+	float: left;
+	width: 100%;
+	position: relative;
+}
+
+.pc {
+	position:absolute; 
+	width:100%;
+	height: 100%;
+	top: 0;
+	left: 0; 
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.rcont img {
+	width: 100%;
+	max-width: 100%;
+}
+#pregunta {
+	flex: 80% 0 0;
+	font-size: 1.2rem;
+	color: #fff;
+	text-align: center;
+}
+#respuestas, #pregcont {
+	float: left;
+	width: 100%;
+}
+.respclic {
+	width: 100%;
+	height: 100%;
+	font-size: 1rem;
+	color: #fff;
+	text-align: center;¿
+}
+.respuesta {
+	float: left;
+	margin: 0 auto;
+	width: 63%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+#respuestas .pc:hover, #respuestas .pc:focus { 
+	background:url(../images/pregunta-04.png) no-repeat top; 
+	background-size: 100% auto; 
+}
+.respval {
+	display: none!important;
+}
+#ie {
+	height: 100%;
+	width: 100%;
+	z-index: 100;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: #000;
+	text-align: center;
+	font-size: 2rem;
+	color:#fff;
+}
+
+#correcto, #incorrecto, #final {
+	height: 100%;
+	width: 100%;
+	z-index: 100;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: #000;
+	text-align: center;
+	font-size: 2rem;
+	color:#fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	text-shadow: 2px 2px 4px black;
+}
+.hid {
+	display: none!important;
+}
+#correcto {
+	background: url(../images/fondo_bien.jpg) no-repeat top;
+	background-size: 100% auto; 
+	
+}
+#incorrecto {
+	background: url(../images/fondo_mal.jpg) no-repeat top;
+	background-size: 100% auto; 
+}
+#final {
+	background: url(../images/podio_final.jpg) no-repeat bottom;
+	background-size: 100% auto; 
+	cursor: default!important;
+}
+#final em {
+	font-size: 0.8rem;
+	margin-bottom: 35px;
+}
+.continuar {
+	background-color:#39507a;
+	border-radius:25px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	padding: 15px;
+	text-decoration:none;
+	margin-top: 15px;
+}
+#controlarea {
+	width: 90%;
+	float: left;
+	margin-right: 5%;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	color: #fff;
+	font-size: 0.8rem;
+	font-weight: lighter;
+	text-align: right;
+}
+#temporizador {
+	margin-bottom: 10px;
+}
+#puntaje {
+	position: relative;
+}
+#score {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 190px;
+	height: 90%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#scorecontent {
+	flex: 160px 0 0;
+	text-align: center;
+}
+#controlarea #timer {
+	font-weight: bold;
+}
+#logo {
+	margin-bottom: 20px;
+	color: #fff;
+	width: 100%;
+	justify-content: center;
+	display: flex;
+   	align-items:center;
+}
+#logo img {
+	max-width: 600px;
+	padding-left: 35px;
+}
+#ayuda {
+	margin-top: 10px;
+}
+#ayuda5050 {
+	width: 180px;
+	padding: 5px;
+	text-align: center;
+	cursor: pointer;
+	float: right;
+}
+#ayuda5050:hover, #ayuda5050:focus {
+	color: #FCDB18;
+}

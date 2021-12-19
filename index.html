@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>
+		#VIVELAREACREDITACION
+	</title>
+	<link rel="icon" 
+      type="image/png" 
+      href="images/favicon-usta.png">
+	<link rel="stylesheet" type="text/css" href="css/juego.css">
+	<meta charset="utf-8">
+
+</head>
+<body>
+
+	<div id="ie" style="display: none;">
+		<img src="images/logo_juego.png"><br><br>
+		Este juego no es compatible con Internet explorer, te recomendamos usar Google chrome o Mozilla Firefox
+	</div>
+
+	<div id="correcto" class="hid">
+		<div>
+			ESA ES LA RESPUESTA CORRECTA, MUY BIEN!<br>
+			Ha obtenido 1 punto.<br>
+			<div class="continuar">continuar</div>
+		</div>
+	</div>
+	<div id="incorrecto" class="hid">
+		<div>
+			ESA NO ES LA RESPUESTA! SIGUA INTENTANDO<br>
+			Ha obtenido 0 puntos.<br>
+			La Respuesta correcta es: <span id="aprender"></span><br>
+			<div class="continuar">continuar</div>
+		</div>
+	</div>
+
+	<div id="final" class="hid">
+		<div>
+			GRACIAS POR PARTICIPAR<br>
+			<em>¡Felicitaciones has obtenido conocimientos millonarios!<br>
+			Eres una persona comprometida con el proceso de Acreditación Institucional Multicampus.</em><br>
+			Su puntaje final es: <span id="puntajefinal">0</span><br>
+			Su tiempo de juego: <span id="tiempofinal">0</span>
+		</div>
+	</div>
+
+	<div id="intro">
+	</div>
+
+	<div id="juegocalidad">
+		<div id="controlarea">
+	
+			<div id="temporizador">Su tiempo en el juego: <span id="timer">0:00</span></div>
+			<div id="puntaje">	
+				<img src="images/pregunta-03.png">
+				<div id="score">
+					<div id="scorecontent">
+						Su Puntaje: 
+				    	<span id="puntos">
+				    	0
+				    	</span>
+			    	</div>
+				</div>
+			</div>
+			<div id="ayuda">
+				<div id="ayuda5050">
+					AYUDA: 50 / 50
+				</div>
+			</div>
+
+		</div>
+
+		<div id="logo">
+			#ViveLaReacreditación 
+			<img src="images/logo_juego.png">
+		</div>
+		<div id="display">
+			<div id="pregcont" class="rcont">
+				<img src="images/pregunta-01.png">
+				<div class="pc">
+					<div id="pregunta"></div>
+				</div>
+			</div>
+			<div id="respuestas">
+				<div class="rcont">
+					<img src="images/pregunta-02.png">
+					<div class="pc respclic">
+					</div>
+				</div>
+				<div class="rcont">
+					<img src="images/pregunta-02.png">
+					<div class="pc respclic">
+					</div>
+				</div>
+				<div class="rcont">
+					<img src="images/pregunta-02.png">
+					<div class="pc respclic">
+					</div>
+				</div>
+				<div class="rcont">
+					<img src="images/pregunta-02.png">
+					<div class="pc respclic">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+<script type="text/javascript" src="js/object.js"></script>
+</body>
+</html>
