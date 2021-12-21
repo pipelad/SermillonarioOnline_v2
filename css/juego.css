@@ -1,4 +1,12 @@
 /* css del juego ***/
+:root {
+	--rich-black:#000814;
+	--oxfor-blue:#001D3D;
+	--prussian-blue:#003566;
+	--mikado-yelow:#FFC300;
+	--web-gold:#FFD60A;
+}
+
 html { width:100%; height:100%; font-size:20px; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; }
 body { width:100%; height:100%; margin:0px; padding:0px; overflow-x:hidden; background-image:url(../images/juegobg.jpg); background-size: cover; background-position: center; }
 @media screen and (min-width:1600px) {
@@ -188,4 +196,26 @@ body { width:100%; height:100%; margin:0px; padding:0px; overflow-x:hidden; back
 }
 #ayuda5050:hover, #ayuda5050:focus {
 	color: #FCDB18;
+}
+
+#loader {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background-color: #000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 111;
+}
+#loader svg {
+	width: 30%;
+}
+
+#loader svg path {
+	stroke: var(--web-gold);
+	stroke-width: 20;
+	fill: transparent;
 }

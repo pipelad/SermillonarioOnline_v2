@@ -1,0 +1,26 @@
+{
+  "name": "ser-millonario-online-v2",
+  "version": "1.0.0",
+  "description": "Update para portafolio a es6, y sass",
+  "browserslist": "last 10 versions",
+  "main": "index.js",
+  "scripts": {
+    "//": "build production",
+    "develop:front": "node-sass sass/main.scss css/juego.css -w -r",
+    "compile:frontend": "node-sass sass/main.scss sass/main.compile.css",
+    "prefix:frontend": "postcss sass/main.compile.scss --use autoprefixer -o sass/main.prefix.css",
+    "compress:frontend": "node-sass sass/main.prefix.scss juego.css --output-style compressed",
+    "build:css": "npm-run-all compile:frontend prefix:frontend compress:frontend"
+  },
+  "author": "Andrés Restrepo",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^10.4.0",
+    "concat": "^1.0.3",
+    "node-sass": "^6.0.1",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.3.11",
+    "postcss-cli": "^9.0.1"
+  }
+}
