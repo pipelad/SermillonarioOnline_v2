@@ -1,0 +1,689 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap");
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+*:hover, *:focus {
+  outline: none; }
+
+a {
+  color: inherit;
+  text-decoration: none; }
+
+/* css del juego ***/
+:root {
+  --rich-black:#000814;
+  --oxford-blue:#001D3D;
+  --prussian-blue:#003566;
+  --yelow:#FFC300;
+  --web-gold:#FFD60A;
+  --white:#fff; }
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+  width: 100%;
+  font-family: 'Roboto', sans-serif; }
+
+body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  background-image: url(../images/juegobg.jpg);
+  background-size: cover;
+  background-position: center; }
+
+#loader {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  background-color: var(--rich-black);
+  z-index: 111; }
+  #loader svg {
+    width: 30%; }
+    #loader svg path {
+      stroke: var(--web-gold);
+      stroke-width: 20;
+      fill: transparent; }
+
+#start--game {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: var(--rich-black);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10; }
+  #start--game > div {
+    width: 50%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    z-index: 12;
+    gap: 4rem; }
+    #start--game > div #logo-start {
+      margin: 0 auto;
+      width: 50%; }
+    #start--game > div #btn-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+    #start--game > div #start-btn {
+      display: inline-block;
+      padding: 2rem;
+      background-color: var(--white);
+      cursor: pointer;
+      border-radius: 2rem;
+      font-size: 2.4rem;
+      text-transform: uppercase;
+      font-weight: 700; }
+      #start--game > div #start-btn:hover, #start--game > div #start-btn:focus {
+        background-color: var(--yelow);
+        color: var(--oxford-blue); }
+
+#juegocalidad {
+  height: 100%;
+  width: 100%;
+  position: relative; }
+  #juegocalidad > #overlay {
+    background: linear-gradient(to bottom right, var(--rich-black), var(--oxford-blue));
+    opacity: 0.2;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; }
+  #juegocalidad .rcont {
+    overflow: hidden;
+    position: relative; }
+    #juegocalidad .rcont:not(:last-child) {
+      margin-bottom: 1rem; }
+    #juegocalidad .rcont img {
+      width: 100%;
+      max-width: 100%;
+      display: inline;
+      vertical-align: middle; }
+  #juegocalidad .pc {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0; }
+  #juegocalidad #pregunta {
+    flex: 80% 0 0;
+    font-size: 2.7rem;
+    color: var(--white);
+    text-align: center; }
+  #juegocalidad #respuestas,
+  #juegocalidad #pregcont {
+    width: 100%;
+    display: flex;
+    flex-flow: column; }
+    #juegocalidad #respuestas:not(:last-child),
+    #juegocalidad #pregcont:not(:last-child) {
+      margin-bottom: 2rem; }
+  #juegocalidad #respuestas .pc:hover,
+  #juegocalidad #respuestas .pc:focus {
+    background: url(../images/pregunta-04.png) no-repeat top;
+    background-size: 100% auto; }
+  #juegocalidad .respclic {
+    width: 100%;
+    height: 100%;
+    font-size: 2rem;
+    color: var(--white);
+    text-align: center; }
+    #juegocalidad .respclic .respuesta {
+      float: left;
+      margin: 0 auto;
+      width: 63%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer; }
+  #juegocalidad #controlarea {
+    position: absolute;
+    width: 90%;
+    float: left;
+    margin-right: 5%;
+    top: 1rem;
+    color: var(--yelow);
+    font-size: 1.6rem;
+    text-align: right; }
+    #juegocalidad #controlarea #temporizador {
+      margin-bottom: 1rem;
+      text-transform: uppercase; }
+      #juegocalidad #controlarea #temporizador #timer {
+        font-weight: 700; }
+    #juegocalidad #controlarea #puntaje {
+      position: relative; }
+    #juegocalidad #controlarea #score {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 19rem;
+      height: 90%;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      #juegocalidad #controlarea #score #scorecontent {
+        flex: 16rem 0 0;
+        text-align: center; }
+        #juegocalidad #controlarea #score #scorecontent #puntos {
+          font-weight: 700; }
+  #juegocalidad #logo {
+    margin-bottom: 2rem;
+    color: var(--white);
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-flow: column-reverse;
+    font-weight: 700;
+    font-size: 2rem; }
+    #juegocalidad #logo img {
+      width: 15%;
+      margin-bottom: 5px;
+      display: inline;
+      vertical-align: middle; }
+  #juegocalidad #ayuda {
+    margin-top: 1rem; }
+    #juegocalidad #ayuda #ayuda5050 {
+      width: 18rem;
+      padding: 0.5rem;
+      text-align: center;
+      cursor: pointer;
+      float: right;
+      color: var(--rich-black);
+      background-color: var(--yelow);
+      border-radius: .5rem;
+      box-shadow: 0.2rem 0.2rem 0.5rem var(--rich-black); }
+      #juegocalidad #ayuda #ayuda5050:hover, #juegocalidad #ayuda #ayuda5050:focus {
+        background-color: var(--rich-black);
+        color: var(--white); }
+
+#correcto,
+#incorrecto,
+#final {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-align: center;
+  font-size: 2rem;
+  color: var(--white);
+  cursor: pointer;
+  text-shadow: 0.2rem 0.2rem 0.4rem var(--rich-black);
+  background-size: 100% auto; }
+  #correcto div.msg,
+  #incorrecto div.msg,
+  #final div.msg {
+    width: 80%;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: rgba(0, 0, 0, 0.2); }
+    #correcto div.msg h2,
+    #correcto div.msg > div,
+    #incorrecto div.msg h2,
+    #incorrecto div.msg > div,
+    #final div.msg h2,
+    #final div.msg > div {
+      margin-bottom: .5rem; }
+    #correcto div.msg span,
+    #incorrecto div.msg span,
+    #final div.msg span {
+      margin-left: .7rem;
+      font-style: italic; }
+
+#start--game .continuar,
+#incorrecto .continuar,
+#correcto .continuar {
+  background-color: var(--yelow);
+  border-radius: 2.5rem;
+  display: inline-block;
+  cursor: pointer;
+  color: var(--rich-black);
+  padding: 1.5rem 2.5rem;
+  text-decoration: none;
+  margin-top: 1.5rem;
+  text-shadow: none; }
+  #start--game .continuar:hover, #start--game .continuar:focus,
+  #incorrecto .continuar:hover,
+  #incorrecto .continuar:focus,
+  #correcto .continuar:hover,
+  #correcto .continuar:focus {
+    background-color: var(--oxford-blue);
+    color: var(--white); }
+
+#correcto {
+  background: url(../images/fondo_bien.jpg) no-repeat top; }
+
+#incorrecto {
+  background: linear-gradient(to bottom, var(--rich-black) 80%, var(--oxford-blue)); }
+
+#final {
+  background: radial-gradient(circle farthest-corner at 0px 0px, var(--rich-black) 60%, var(--oxford-blue));
+  background-size: contain;
+  cursor: default !important;
+  display: flex; }
+  #final > div#victory {
+    flex: 30% 0 0; }
+    #final > div#victory svg {
+      width: 100%; }
+      #final > div#victory svg .st0 {
+        fill: #FFFFFF; }
+      #final > div#victory svg .st1 {
+        fill: #F9B384; }
+      #final > div#victory svg .st2 {
+        fill: #BB9132; }
+      #final > div#victory svg .st3 {
+        fill: #FBC343; }
+      #final > div#victory svg .st4 {
+        fill: #1F3C88; }
+      #final > div#victory svg .st5 {
+        fill: #6F3428; }
+      #final > div#victory svg .st6 {
+        opacity: 0.6;
+        fill: #FFFFFF; }
+      #final > div#victory svg .st7 {
+        fill: #102048; }
+      #final > div#victory svg .st8 {
+        opacity: 0.3; }
+      #final > div#victory svg .st9 {
+        fill: #E28B6D; }
+      #final > div#victory svg .silver .st3 {
+        fill: #cecece; }
+      #final > div#victory svg .silver .st4 {
+        fill: #881f30; }
+  #final > div#victorymsg {
+    flex: 50% 0 0;
+    margin-left: 4rem;
+    text-align: left;
+    text-shadow: none;
+    font-size: 1.6rem; }
+    #final > div#victorymsg h2 {
+      font-size: 4.4rem;
+      background: linear-gradient(to right, var(--web-gold), var(--white));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 1rem; }
+    #final > div#victorymsg .feliz {
+      font-size: 2.2rem;
+      margin-bottom: 1rem; }
+    #final > div#victorymsg .final-scoring {
+      margin-top: 1rem; }
+      #final > div#victorymsg .final-scoring span {
+        font-weight: 700;
+        color: var(--yelow); }
+  #final em {
+    font-size: 0.8rem;
+    margin-bottom: 35px; }
+
+/*====================== UTILIDAD ===============*/
+.hid {
+  display: none !important; }
+
+/*====================== ANIMACION =============*/
+#start--game .animation-element,
+#incorrecto .animation-element,
+#correcto .animation-element {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  overflow: hidden; }
+  #start--game .animation-element img,
+  #incorrecto .animation-element img,
+  #correcto .animation-element img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0; }
+  #start--game .animation-element > div.start,
+  #incorrecto .animation-element > div.start,
+  #correcto .animation-element > div.start {
+    position: absolute;
+    transition: all;
+    width: 1rem;
+    height: 1rem;
+    animation: startGame 10s ease-in forwards infinite;
+    border: solid 0.1rem var(--prussian-blue);
+    transform-origin: top left;
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    animation-delay: calc(var(--animation-size) * .7s); }
+  #start--game .animation-element > div.inc,
+  #incorrecto .animation-element > div.inc,
+  #correcto .animation-element > div.inc {
+    width: .1rem;
+    height: 100%;
+    position: relative;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.2)); }
+    #start--game .animation-element > div.inc::before, #start--game .animation-element > div.inc::after,
+    #incorrecto .animation-element > div.inc::before,
+    #incorrecto .animation-element > div.inc::after,
+    #correcto .animation-element > div.inc::before,
+    #correcto .animation-element > div.inc::after {
+      content: "";
+      position: absolute;
+      height: .3rem;
+      width: .3rem;
+      top: 0;
+      left: -0.1rem;
+      background-color: var(--white);
+      border-radius: 50%;
+      box-shadow: 0 0 0.2rem 0.3rem var(--white);
+      animation: rainDrop 6s ease-in forwards infinite;
+      animation-delay: calc(var(--delay) * .5s);
+      opacity: .5; }
+    #start--game .animation-element > div.inc::after,
+    #incorrecto .animation-element > div.inc::after,
+    #correcto .animation-element > div.inc::after {
+      animation-delay: calc(var(--delay) * 1.7s); }
+  #start--game .animation-element > div.corr,
+  #incorrecto .animation-element > div.corr,
+  #correcto .animation-element > div.corr {
+    position: absolute;
+    width: .5rem;
+    height: .5rem;
+    border-radius: 50%;
+    background-color: var(--white);
+    animation: fly 6s ease-in forwards infinite;
+    animation-delay: calc(var(--delay) * .3s);
+    box-shadow: 0 0 0.2rem 0.3rem var(--white);
+    opacity: .5;
+    bottom: -2rem; }
+
+#start--game .animation-element > div.start:nth-child(1) {
+  top: 70vh;
+  left: 75vw; }
+
+#start--game .animation-element > div.start:nth-child(2) {
+  top: 14vh;
+  left: 4vw; }
+
+#start--game .animation-element > div.start:nth-child(3) {
+  top: 57vh;
+  left: 61vw; }
+
+#start--game .animation-element > div.start:nth-child(4) {
+  top: 5vh;
+  left: 6vw; }
+
+#start--game .animation-element > div.start:nth-child(5) {
+  top: 88vh;
+  left: 8vw; }
+
+#start--game .animation-element > div.start:nth-child(6) {
+  top: 59vh;
+  left: 77vw; }
+
+#start--game .animation-element > div.start:nth-child(7) {
+  top: 25vh;
+  left: 65vw; }
+
+#start--game .animation-element > div.start:nth-child(8) {
+  top: 47vh;
+  left: 14vw; }
+
+#start--game .animation-element > div.start:nth-child(9) {
+  top: 43vh;
+  left: 78vw; }
+
+#start--game .animation-element > div.start:nth-child(10) {
+  top: 30vh;
+  left: 81vw; }
+
+#incorrecto .animation-element {
+  display: flex;
+  justify-content: space-evenly; }
+  #incorrecto .animation-element img {
+    opacity: 0.05; }
+
+#correcto .animation-element > div.corr:nth-child(1) {
+  left: 38vw; }
+
+#correcto .animation-element > div.corr:nth-child(2) {
+  left: 5vw; }
+
+#correcto .animation-element > div.corr:nth-child(3) {
+  left: 30vw; }
+
+#correcto .animation-element > div.corr:nth-child(4) {
+  left: 55vw; }
+
+#correcto .animation-element > div.corr:nth-child(5) {
+  left: 6vw; }
+
+#correcto .animation-element > div.corr:nth-child(6) {
+  left: 14vw; }
+
+#correcto .animation-element > div.corr:nth-child(7) {
+  left: 33vw; }
+
+#correcto .animation-element > div.corr:nth-child(8) {
+  left: 28vw; }
+
+#correcto .animation-element > div.corr:nth-child(9) {
+  left: 79vw; }
+
+#correcto .animation-element > div.corr:nth-child(10) {
+  left: 27vw; }
+
+#correcto .animation-element > div.corr:nth-child(11) {
+  left: 29vw; }
+
+#correcto .animation-element > div.corr:nth-child(12) {
+  left: 25vw; }
+
+#correcto .animation-element > div.corr:nth-child(13) {
+  left: 72vw; }
+
+#correcto .animation-element > div.corr:nth-child(14) {
+  left: 37vw; }
+
+#correcto .animation-element > div.corr:nth-child(15) {
+  left: 36vw; }
+
+#correcto .animation-element > div.corr:nth-child(16) {
+  left: 56vw; }
+
+#correcto .animation-element > div.corr:nth-child(17) {
+  left: 84vw; }
+
+#correcto .animation-element > div.corr:nth-child(18) {
+  left: 88vw; }
+
+#correcto .animation-element > div.corr:nth-child(19) {
+  left: 11vw; }
+
+#correcto .animation-element > div.corr:nth-child(20) {
+  left: 18vw; }
+
+#victory #bg-circle {
+  transform: translateY(-20%);
+  opacity: 0;
+  animation: champDrop 3s ease forwards; }
+
+#victory #ganador {
+  opacity: 0;
+  animation: champFade 2s ease forwards;
+  animation-delay: 1.5s; }
+
+#victory g#brazo-anim-pos1 {
+  transform: rotate(0deg);
+  transform-origin: 46% 33%;
+  animation: champArm 2s ease forwards infinite; }
+
+@keyframes startGame {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(0deg) translate(-50%, -50%); }
+  100% {
+    transform: scale(calc(var(--animation-size) * 5)) rotate(960deg) translate(-50%, -50%);
+    opacity: 0.8; } }
+
+@keyframes rainDrop {
+  0% {
+    top: 0;
+    opacity: .5; }
+  100% {
+    top: 100%;
+    opacity: 1; } }
+
+@keyframes fly {
+  0% {
+    bottom: -2rem; }
+  100% {
+    bottom: 100%; } }
+
+@keyframes champArm {
+  0% {
+    transform: rotate(0deg); }
+  50% {
+    transform-origin: 47% 33%;
+    transform: rotate(25deg); }
+  100% {
+    transform: rotate(0deg); } }
+
+@keyframes champFade {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes champDrop {
+  from {
+    transform: translateY(-20%);
+    opacity: 0; }
+  to {
+    transform: translateY(0);
+    opacity: 1; } }
+
+@media screen and (min-width: 1600px) {
+  body {
+    font-size: 2.4rem; } }
+
+@media screen and (max-width: 1300px) {
+  body {
+    font-size: 1.8rem; } }
+
+@media screen and (max-width: 1200px) {
+  body {
+    font-size: 1.6rem; } }
+
+@media screen and (max-width: 1100px) {
+  body {
+    font-size: 1.4rem; } }
+
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+  body {
+    font-size: 2.4rem; }
+  #juegocalidad #display {
+    margin-top: 2rem; }
+  #juegocalidad #pregunta {
+    font-size: 4rem; }
+  #juegocalidad .respclic {
+    font-size: 3rem; }
+  #juegocalidad #controlarea {
+    font-size: 2.2rem; }
+  #incorrecto,
+  #correcto {
+    background-size: cover; } }
+
+@media screen and (max-width: 768px), screen and (max-width: 1024px) and (orientation: portrait) {
+  #start--game > div {
+    width: 75%; }
+  #juegocalidad #controlarea {
+    width: 98%;
+    margin-right: 2%; }
+  #juegocalidad #logo img {
+    width: 25%; }
+  #juegocalidad #display img {
+    display: none; }
+  #juegocalidad #display .pc {
+    position: relative; }
+    #juegocalidad #display .pc > div {
+      padding: 2rem;
+      background-color: var(--rich-black);
+      border-radius: 1rem; } }
+
+@media screen and (max-width: 450px) and (orientation: portrait) {
+  body {
+    font-size: 1.4rem; }
+  #start--game {
+    position: fixed; }
+  #juegocalidad {
+    height: 120%;
+    display: grid;
+    grid-template-columns: 1fr; }
+    #juegocalidad #logo {
+      margin-bottom: -3rem;
+      justify-content: start;
+      grid-row-start: 1; }
+    #juegocalidad #display {
+      margin-top: 0rem; }
+    #juegocalidad #pregunta {
+      font-size: 2rem; }
+    #juegocalidad .respclic {
+      font-size: 1rem; }
+    #juegocalidad #controlarea {
+      position: relative;
+      display: flex;
+      justify-content: space-evenly;
+      flex-flow: row wrap;
+      font-size: 1rem; }
+      #juegocalidad #controlarea > div {
+        position: relative;
+        display: inline-block;
+        max-height: 4rem; }
+      #juegocalidad #controlarea #temporizador {
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+      #juegocalidad #controlarea #score {
+        height: 110%; }
+  #incorrecto,
+  #correcto {
+    background-size: cover; }
+  #final {
+    flex-flow: column; }
+    #final > div#victory {
+      margin-bottom: 1rem; }
+      #final > div#victory svg {
+        width: 50%; } }
+
+@media screen and (max-width: 320px) {
+  body {
+    font-size: 1.2rem; }
+  #juegocalidad #display {
+    margin-top: .5rem; }
+  #juegocalidad #pregunta {
+    font-size: 1.5rem; }
+  #juegocalidad .respclic {
+    font-size: 1rem; }
+  #juegocalidad #controlarea {
+    font-size: .8rem; }
+  #final > div#victory svg {
+    width: 40%; } }
