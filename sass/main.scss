@@ -1,0 +1,405 @@
+@import 'abstracts/mixins';
+@import 'abstracts/resets';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
+
+
+/* css del juego ***/
+:root {
+	--rich-black:#000814;
+	--oxford-blue:#001D3D;
+	--prussian-blue:#003566;
+	--yelow:#FFC300;
+	--web-gold:#FFD60A;
+	--white:#fff;
+}
+
+html {
+	font-size: 62.5%;
+	@include full-size;
+	font-family: 'Roboto', sans-serif;
+}
+
+body {
+	@include full-size;
+	overflow-x: hidden;
+	background-image:url(../images/juegobg);
+	background-size:cover;
+	background-position:center;
+}
+
+
+#loader {
+	position: absolute;
+	@include full-size;
+	@include flex-display-centered;
+	top: 0;
+	left: 0;
+	background-color:var(--rich-black);
+	z-index: 111;
+
+	svg {
+		width: 30%;
+
+		path {
+			stroke: var(--web-gold);
+			stroke-width: 20;
+			fill: transparent;
+		}
+	}
+	
+}
+
+#start--game {
+	@include full-size;
+	@include flex-display;
+	background-color: var(--rich-black);
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10;
+
+	>div {
+		width: 50%;
+		height: 100%;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(3, 1fr);
+		z-index: 12;
+		gap: 4rem;
+
+		#logo-start {
+			margin: 0 auto;
+			width: 50%;
+		}
+		#btn-wrap {
+			@include flex-display-centered;
+		}
+		#start-btn {
+			display: inline-block;
+			padding:2rem;
+			background-color:var(--white);
+			cursor: pointer;
+			border-radius: 2rem;
+			font-size:2.4rem;
+			text-transform: uppercase;
+			font-weight: 700;
+
+			&:hover,
+			&:focus {
+				background-color: var(--yelow);
+				color: var(--oxford-blue);
+			}
+		}
+
+	}
+
+}
+
+#juegocalidad {
+	@include full-size;
+	position: relative;
+
+	>#overlay {
+		background: linear-gradient(to bottom right, var(--rich-black), var(--oxford-blue));
+		opacity: 0.2;
+		@include full-size;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+	}
+
+	.rcont {
+		overflow: hidden;
+		position: relative;
+
+		&:not(:last-child) {
+			margin-bottom: 1rem;
+		}
+
+		img {
+			width: 100%;
+			max-width: 100%;
+			@include image-block;
+		}
+	}
+
+	.pc {
+		position:absolute; 
+		@include full-size;
+		@include flex-display-centered;
+		top: 0;
+		left: 0; 
+		
+	}
+	#pregunta {
+		flex: 80% 0 0;
+		font-size: 2.7rem;
+		color: var(--white);
+		text-align: center;
+	}
+	#respuestas, 
+	#pregcont {
+		width: 100%;
+		display: flex;
+		flex-flow: column;
+		
+		&:not(:last-child) {
+			margin-bottom: 2rem;
+		}
+	}
+	#respuestas {
+		.pc:hover,
+		.pc:focus { 
+			background:url(../images/pregunta-04.png) no-repeat top; 
+			background-size: 100% auto; 
+		}
+
+	}
+
+	.respclic {
+		width: 100%;
+		height: 100%;
+		font-size: 2rem;
+		color: var(--white);
+		text-align: center;
+
+		.respuesta {
+			float: left;
+			margin: 0 auto;
+			width: 63%;
+			height: 100%;
+			@include flex-display-centered;
+			cursor: pointer;
+		}
+	}
+	
+
+	#controlarea {
+		position: absolute;
+		width: 90%;
+		float: left;
+		margin-right: 5%;
+		top: 1rem;
+		color: var(--yelow);
+		font-size: 1.6rem;
+		text-align: right;
+
+		#temporizador {
+			margin-bottom: 1rem;
+			text-transform: uppercase;
+
+			#timer {
+				font-weight: 700;
+			}
+		}
+
+		#puntaje {
+			position: relative;
+		}
+
+		#score {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 19rem;
+			height: 90%;
+			@include flex-display-centered;
+
+			#scorecontent {
+				flex: 16rem 0 0;
+				text-align: center;
+				
+				#puntos {
+					font-weight: 700;
+				}
+			}
+		}
+
+		
+	}
+	
+	#logo {
+		margin-bottom: 2rem;
+		color: var(--white);
+		width: 100%;
+		justify-content: center;
+		display: flex;
+	   	align-items:center;
+	   	flex-flow: column-reverse;
+	   	font-weight: 700;
+	   	font-size: 2rem;
+
+	   	img {
+	   		width: 15%;
+	   		margin-bottom: 5px;
+	   		@include image-block;
+		}
+	}
+	
+
+	#ayuda {
+		margin-top: 1rem;
+
+		#ayuda5050 {
+			width: 18rem;
+			padding: 0.5rem;
+			text-align: center;
+			cursor: pointer;
+			float: right;
+			color: var(--rich-black);
+			background-color: var(--yelow);
+			border-radius:.5rem;
+			box-shadow: .2rem .2rem .5rem var(--rich-black);
+
+			&:hover, 
+			&:focus {
+				background-color: var(--rich-black);
+				color: var(--white);
+			}
+		}
+		
+	}
+
+}
+
+#correcto, 
+#incorrecto, 
+#final {
+	@include full-size;
+	@include flex-display-centered;
+	z-index: 10;
+	position: fixed;
+	top: 0;
+	left: 0;
+	text-align: center;
+	font-size: 2rem;
+	color:var(--white);
+	cursor: pointer;
+	text-shadow: 0.2rem 0.2rem 0.4rem var(--rich-black);
+	background-size: 100% auto; 
+
+	div.msg {
+		width: 80%;
+		padding: 2rem;
+		border-radius: 1rem;
+		background-color: rgba(0, 0, 0, .2);
+		h2,
+		>div {
+			margin-bottom: .5rem;
+		}
+		span {
+			margin-left: .7rem;
+			font-style: italic;
+		}
+
+	}
+}
+
+#start--game,
+#incorrecto,
+#correcto {
+
+	.continuar {
+		background-color:var(--yelow);
+		border-radius:2.5rem;
+		display:inline-block;
+		cursor:pointer;
+		color: var(--rich-black);
+		padding: 1.5rem 2.5rem;
+		text-decoration:none;
+		margin-top: 1.5rem;
+		text-shadow: none;
+
+		&:hover,
+		&:focus {
+			background-color: var(--oxford-blue);
+			color: var(--white);
+		}
+	}
+}
+
+#correcto {
+	background: url(../images/fondo_bien.jpg) no-repeat top;
+}
+#incorrecto {
+	background: linear-gradient(to bottom, var(--rich-black) 80%, var(--oxford-blue));
+}
+#final {
+	background: radial-gradient(circle farthest-corner at 0px 0px, var(--rich-black) 60%, var(--oxford-blue));
+	background-size: contain;
+	cursor: default!important;
+	display: flex;
+
+	>div#victory {
+		flex: 30% 0 0;
+
+		svg {
+			width: 100%;
+
+			.st0{fill:#FFFFFF;}
+			.st1{fill:#F9B384;}
+			.st2{fill:#BB9132;}
+			.st3{fill:#FBC343;}
+			.st4{fill:#1F3C88;}
+		    .st5{fill:#6F3428;}
+			.st6{opacity:0.6;fill:#FFFFFF;}
+			.st7{fill:#102048;}
+			.st8{opacity:0.3;}
+			.st9{fill:#E28B6D;}
+
+			.silver {
+				.st3{fill:#cecece;}
+				.st4{fill:#881f30;}
+			}
+		}
+	}
+
+	>div#victorymsg {
+		flex: 50% 0 0;
+		margin-left: 4rem;
+		text-align: left;
+		text-shadow: none;
+		font-size: 1.6rem;
+
+		h2 {
+			font-size: 4.4rem;
+			background: linear-gradient(to right, var(--web-gold), var(--white));
+			-webkit-background-clip: text;
+			background-clip: text;
+			color: transparent;
+			margin-bottom: 1rem;
+		}
+
+		.feliz {
+			font-size: 2.2rem;
+			margin-bottom: 1rem;
+		}
+
+		.final-scoring {
+			margin-top: 1rem;
+
+			span {
+				font-weight: 700;
+				color: var(--yelow);
+			}
+		}
+	}
+
+	em {
+		font-size: 0.8rem;
+		margin-bottom: 35px;
+	}
+}
+
+
+/*====================== UTILIDAD ===============*/
+.hid {
+	display: none!important;
+}
+
+
+/*====================== ANIMACION =============*/
+
+@import 'abstracts/animations';
+@import 'abstracts/mediaquery';

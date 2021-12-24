@@ -20,11 +20,11 @@ const xmlhttp = new XMLHttpRequest(),
 
 let	cuestionarioObj = '',
 	cuestionario = [],
+	cuestionarioLen,
 	number = '', 
 	puntaje = 0,
 	currentAyuda = [0, 1, 2, 3]; // diseñado el 50/50 a base de 4 preguntas a futuro pensar en solución dinámica
 	
-
 
 //// 2. Sección buscar archivo cuestionario
 
@@ -32,6 +32,7 @@ xmlhttp.onreadystatechange = function() {
 	if(this.readyState == 4 && this.status == 200) {
         cuestionarioObj = JSON.parse(this.responseText);
         cuestionario = cuestionarioObj.Cuestionario;
+        cuestionarioLen = cuestionario.length;
         setTimeout(function() {
         	animateLoader(loadPath, false, 2, 0.7);
         	loadPath.classList.remove('hid');
@@ -43,9 +44,7 @@ xmlhttp.onreadystatechange = function() {
         //console.log(cuestionarioObj);
     } else if(this.readyState == 4 && this.status != 200){
     	console.log(`Error: ${this.statusText}`);
-    } else {
-    	console.log('loading');
-    }
+    } 
 };
 xmlhttp.open("GET", "json/preguntas.json", true); // url del cuestionario y filename
 xmlhttp.send();
@@ -63,9 +62,15 @@ function preguntepues() {
 		respuestas();
 	} else {
 		/// método para finalizar.
-		let finalTime = document.getElementById('timer').innerHTML;
-		finTime.innerHTML = finalTime;
+		const finalTime = document.querySelector('#timer').innerHTML,
+			  goldSilver = document.querySelector('#gold-silver'),
+			  champ = document.querySelector('#ganador');
+		finTime.innerHTML = `${finalTime} ${finalTime[0] == '0' ? 'segundos' : 'minutos'}`;
 		finPunt.innerHTML = puntaje;
+		if(puntaje < cuestionarioLen * 0.6) {
+			champ.classList.add('silver');
+			goldSilver.innerText = 'Lo has hecho bien, aún puedes aprender sobre el proceso de Acreditación Institucional Multicampus.';
+		}
 		final.classList.remove('hid');
 	}
 } 
@@ -87,8 +92,14 @@ function respuestas() {
 	let xRespuestas = [...cuestionario[number].respuestas].sort(() => Math.random() - 0.5); 
 	// usar sort para randomizar aparición de las respuestas esto implica un problma porque la key del array ya no equivaldría a la respuesta correcta, complica la función actual del juego
 	for(let i = 0; i < xRespuestas.length; i++ ) {
-		let respuestaLiteral = `<div class="rcont"><img src="images/pregunta-02.png"><div class="pc respclic"><div class="respuesta" onclick="siguiente(event)" id="btn_${i}">${cuestionario[number].respuestas[i]}</div></div></div>`;
-		areaRespuesta.innerHTML += respuestaLiteral;
+		let respuestaLiteral = 
+		`<div class="rcont">
+				<img src="images/pregunta-02.png">
+				<div class="pc respclic">
+					<div class="respuesta" onclick="siguiente(event)" id="btn_${i}">${cuestionario[number].respuestas[i]}</div>
+				</div>
+			</div>`;
+		areaRespuesta.insertAdjacentHTML('afterbegin', respuestaLiteral);
 	}
 	
 }
@@ -107,7 +118,7 @@ function siguiente(event) {
 		bien.classList.remove('hid');
 	} else {
 		/// Mostar incorrecto!
-		aprender.innerHTML = cuestionario[number].respuestas[cuestionario[number].correcta];
+		aprender.innerHTML = `"${cuestionario[number].respuestas[cuestionario[number].correcta]}"`;
 		cuestionario.splice(number, 1); /// remover pregunta para no repetir
 		mal.classList.remove('hid');
 		/// En caso de restar puntaje acá seria.
@@ -174,7 +185,7 @@ function animateLoader(item, repeat, begin, duration) {
 
 	item.innerHTML = `<animate attributeName="stroke-dashoffset" begin="${Number(begin)}s" dur="${Number(duration)}s" to="0" ${repeater} />`;
 
-	console.log(pathLenght);
+	//console.log(pathLenght);
 
 }
 
@@ -183,6 +194,7 @@ function animateLoader(item, repeat, begin, duration) {
 animateLoader(loadCircle, true, 0, 1.5);
 
 startBtn.addEventListener('click', function(e) {
+	document.querySelector('#start--game').classList.add('hid');
 	preguntepues();
 	startTimer();
 })

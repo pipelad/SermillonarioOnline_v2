@@ -13,48 +13,170 @@
 	<meta name="author" content="Andrés Restrepo">
 </head>
 <body>
-	<div id="loader">
+
+	<div id="loader" class="hid">
 		<svg x="0px" y="0px" viewBox="0 0 500 500" >
 			<path id="loader--circle" d="M80.29,86.34C123.17,41.88,183.35,14.23,250,14.23c130.21,0,235.77,105.56,235.77,235.77 S380.21,485.77,250,485.77S14.23,380.21,14.23,250C14.23,186.43,39.38,128.74,80.29,86.34" stroke-linecap="round"/>
 			<path id="loader--chulo" class="hid" d="M130,250c0,0,102.84,107.02,120,101.91c15.29-4.56,130-224.43,130-224.43" stroke-linecap="round"/>
 		</svg>
 	</div>
+
 	<div id="start--game">
-		<div id="logo-start"></div>
-		<div id="start-btn">Comenzar el juego</div>
+		<div class="animation-element">
+			<div class="start" style="--animation-size: 1;"></div>
+			<div class="start" style="--animation-size: 2;"></div>
+			<div class="start" style="--animation-size: 3;"></div>
+			<div class="start" style="--animation-size: 4;"></div>
+			<div class="start" style="--animation-size: 5;"></div>
+			<div class="start" style="--animation-size: 6;"></div>
+			<div class="start" style="--animation-size: 7;"></div>
+			<div class="start" style="--animation-size: 8;"></div>
+			<div class="start" style="--animation-size: 9;"></div>
+			<div class="start" style="--animation-size: 10;"></div>
+		</div>
+		<div>
+			<div id="logo-start"><img src="images/logo_sedeprincipal.svg" alt="Universidad Santo Tomás"></div>
+			<div id="btn-wrap"><div id="start-btn">Comenzar el juego</div></div>
+		</div>
 	</div>
 
 	<div id="correcto" class="hid">
-		<div>
-			ESA ES LA RESPUESTA CORRECTA, MUY BIEN!<br>
-			Ha obtenido 1 punto.<br>
+		<div class="animation-element">
+			<div class="corr" style="--delay: 1"></div>
+			<div class="corr" style="--delay: 2"></div>
+			<div class="corr" style="--delay: 3"></div>
+			<div class="corr" style="--delay: 4"></div>
+			<div class="corr" style="--delay: 5"></div>
+			<div class="corr" style="--delay: 6"></div>
+			<div class="corr" style="--delay: 7"></div>
+			<div class="corr" style="--delay: 8"></div>
+			<div class="corr" style="--delay: 9"></div>
+			<div class="corr" style="--delay: 10"></div>
+			<div class="corr" style="--delay: 11"></div>
+			<div class="corr" style="--delay: 12"></div>
+			<div class="corr" style="--delay: 13"></div>
+			<div class="corr" style="--delay: 14"></div>
+			<div class="corr" style="--delay: 15"></div>
+			<div class="corr" style="--delay: 16"></div>
+			<div class="corr" style="--delay: 17"></div>
+			<div class="corr" style="--delay: 18"></div>
+			<div class="corr" style="--delay: 19"></div>
+			<div class="corr" style="--delay: 20"></div>
+		</div>
+		<div class="msg">
+			<h2>ESA ES LA RESPUESTA CORRECTA, MUY BIEN!</h2>
+			<div>Ha obtenido 1 punto.</div>
 			<div class="continuar">continuar</div>
 		</div>
 	</div>
+
 	<div id="incorrecto" class="hid">
-		<div>
-			ESA NO ES LA RESPUESTA! SIGUA INTENTANDO<br>
-			Ha obtenido 0 puntos.<br>
-			La Respuesta correcta es: <span id="aprender"></span><br>
+		<div class="animation-element">
+			<img src="images/fondo_mal.jpg" alt="errado">
+			<div class="inc" style="--delay:1"></div>
+			<div class="inc" style="--delay:4"></div>
+			<div class="inc" style="--delay:2"></div>
+			<div class="inc" style="--delay:3"></div>
+			<div class="inc" style="--delay:.5"></div>
+		</div>
+		<div class="msg">
+			<h2>ESA NO ES LA RESPUESTA CORRECTA! SIGA INTENTANDO</h2>
+			<div>Ha obtenido 0 puntos.</div>
+			<div>La Respuesta correcta es: <span id="aprender"></span></div>
 			<div class="continuar">continuar</div>
 		</div>
 	</div>
 
 	<div id="final" class="hid">
-		<div>
-			GRACIAS POR PARTICIPAR<br>
-			<em>¡Felicitaciones has obtenido conocimientos millonarios!<br>
-			Eres una persona comprometida con el proceso de Acreditación Institucional Multicampus.</em><br>
-			Su puntaje final es: <span id="puntajefinal">0</span><br>
-			Su tiempo de juego: <span id="tiempofinal">0</span>
+		<div id="victory">
+			<svg version="1.1" x="0px" y="0px" viewBox="0 0 736 1034.95" xml:space="preserve">
+				<circle id="bg-circle" class="st0" cx="368" cy="582" r="368"/>
+				<g id="ganador">
+					<g id="brazo-anim-pos1">
+						<path class="anim-arr st1" d="M442.21,225.99l14.41-43.24l39.02,9.11c2.94,14.48-14.59,36.45-27.62,52.89L442.21,225.99z"/>
+						<path class="anim-arr st2" d="M493.55,209.6L487,193c-0.14-0.36-1.81-1.67-2-2l-20.39-32.85c-1.98-3.36-6.33-4.46-9.66-2.44l-9.09,5.51
+						c-3.33,2.02-4.37,6.37-2.32,9.68l20.14,33.57c0.22,0.35,0.46,0.68,0.74,0.98l13.03,13.99c2.25,2.5,5.96,3.05,8.84,1.31l4.36-2.65
+						C493.54,216.35,494.76,212.77,493.55,209.6z"/>
+						<path class="anim-arr st3" d="M466.88,156.34l-26.92,16.32c-6.03,3.65-13.82,2.34-18.32-3.1l-45.05-54.48l68.55-41.56l27.46,65.14
+						C475.35,145.16,472.91,152.68,466.88,156.34z"/>
+						<path class="anim-arr st3" d="M463.58,121.97l-3.71-1.54c10.34-24.9,8.54-45.14,0.94-49.6c-3.96-2.32-9.43,0.42-15.03,7.51l-3.16-2.49
+						c9.91-12.56,17.44-10.12,20.22-8.49C472.1,72.79,474.91,94.7,463.58,121.97z"/>
+						<path class="anim-arr st3" d="M409.95,154.53c-29.41-2.57-47.54-15.19-48.08-25.91c-0.16-3.22,1.16-11.02,16.87-14l0.75,3.95
+						c-8.88,1.68-13.84,5.27-13.61,9.85c0.44,8.8,17.54,19.76,44.41,22.1L409.95,154.53z"/>
+						<path class="anim-arr st1" d="M495.61,190.84c0.98,6.97-3.42,13.19-12.72,13.19c-5.81,0-13.94-7.96-15.65-17.42
+						c-1.41-7.8,1.58-12.91,7.09-15.18C479.99,169.1,493.77,177.69,495.61,190.84z"/>
+						<path class="anim-arr st3" d="M361.83,84.59l-42.92-13.52c-1.66-0.52-2.59-2.3-2.06-3.96v0c0.52-1.66,2.3-2.59,3.96-2.06l42.92,13.52
+						c1.66,0.52,2.59,2.3,2.06,3.96v0C365.27,84.2,363.5,85.12,361.83,84.59z"/>
+						<path class="anim-arr st3" d="M416.75,51.08L416.75,51.08c-1.72-0.3-2.86-1.94-2.56-3.66l7.82-44.31c0.3-1.72,1.94-2.86,3.66-2.56v0
+						c1.72,0.3,2.86,1.94,2.56,3.66l-7.82,44.31C420.11,50.23,418.47,51.38,416.75,51.08z"/>
+						<path class="anim-arr st3" d="M381.63,57.26l-24.26-37.89c-0.94-1.47-0.51-3.42,0.96-4.36v0c1.47-0.94,3.42-0.51,4.36,0.96l24.26,37.89
+						c0.94,1.47,0.51,3.42-0.96,4.36l0,0C384.52,59.16,382.57,58.73,381.63,57.26z"/>
+						<path class="anim-arr st1" d="M466.68,192.92c1.46-5.55,0.71-10.56-1.69-11.19c-2.4-0.63-6.08,1.96-7.54,7.51
+						c-1.46,5.55-3.15,13.53,0.63,15.32C464.78,207.72,465.22,198.47,466.68,192.92z"/>
+						<path class="anim-arr st4" d="M374,421l-0.35,0.38c-0.16-0.78-0.33-1.56-0.49-2.33l100.22-178.99l-32.68-22.12
+						c-30.33,51.21-59.9,96.21-86.64,117.65c-2.82,2.27-6.21,3.62-9.75,4.13c0,0-7.53,35.85-4.32,47.28C349,419,374,421,374,421z"/>
+						<path class="anim-arr st5" d="M515.45,209.37l-7.92-5.51c-1.51-1.05-3.49-1.11-5.06-0.16l-36.98,22.42c-1.57,0.95-2.43,2.74-2.2,4.56
+						l1.22,9.57c0.42,3.33,4.14,5.12,7.01,3.38l43.68-26.48C518.08,215.41,518.21,211.29,515.45,209.37z"/>
+						<path class="anim-arr st6" d="M423,91c0,0,17-14,20-13s20,45,20,45h-1c0,0-17-40-22-38s-16,7-16,7L423,91z"/>
+					</g>
+					<g id="body-noamin">
+						<g>
+							<path class="st1" d="M351.13,995.01l0.33-29.44l-42.65,3.02l-1.23,24.33C321.17,995.73,336.63,996.45,351.13,995.01z"/>
+							<path class="st7" d="M397.3,1034.95c-11.56-18.94-27.38-25.26-46.25-27.65l0.09-12.29c-14.5,1.44-29.96,0.73-43.55-2.09
+							l-2.12,42.03H397.3z"/>
+						</g>
+						<g>
+							<path class="st7" d="M139.42,997.88l-3.9,8.91c-18.88,2.39-35.77,12.56-51.28,28.16h89.49l9.52-36.96
+							C167.98,1000.58,153.41,1000.4,139.42,997.88z"/>
+							<path class="st1" d="M183.26,997.99l7.57-29.4l-37.71-2.01l-13.7,31.31C153.41,1000.4,167.98,1000.58,183.26,997.99z"/>
+						</g>
+						<path class="st7" d="M370.82,537.71c22.46,146.14,16.09,291.61-15.08,438.42h-53.63c6.4-95.29,11.29-208.56-3.69-283.56
+						L196.11,977.38h-58.57l96.53-405.48l33.18-65.02l77.76-9.39L370.82,537.71z"/>
+						<polygon class="st1" points="310.65,380.32 265.72,380.84 261.26,322 260.73,314.96 305.86,314.56 307.47,336.88 		"/>
+						<path class="st7" d="M307.22,332.83c-14.71,10.5-33.94,3.96-45.96-10.83l-0.52-7.04l45.13-0.4L307.22,332.83z"/>
+						<path class="st1" d="M296.73,327.9c-22.8,5.21-48.26-9.41-58.3-28.83l-1.36-34.87l12.76-18.1l54.29,4.67
+						c-0.25,0.06-0.22,0.82,0,2.12c0.63,3.38,2.72,10.58,4.64,19.26C313.5,293.29,317.29,323.19,296.73,327.9z"/>
+						<path class="st0" d="M258.54,358.05c0,0,33.52,26.81,62.68-11.4l55.3,183.68c-33.86,23.93-76.67,32.19-128.04,25.47L258.54,358.05
+						z"/>
+						<g class="st8">
+							<path class="st4" d="M265.72,380.84c4.64,1.68,9.39,2.69,14.12,3.21c4.74,0.48,9.51,0.37,14.11-0.57
+							c4.59-0.9,9.14-2.34,13.31-4.65c2.2-0.96,4.1-2.43,6.19-3.67c2.06-1.29,3.85-2.94,5.93-4.32c-1.54,1.91-3.14,3.83-4.9,5.6
+							c-1.91,1.59-3.69,3.41-5.9,4.65c-4.14,2.91-9.05,4.66-14.02,5.69C284.55,388.71,273.86,386.47,265.72,380.84z"/>
+						</g>
+						<path class="st9" d="M308.76,272.16c-34.51,19.64-63.19-16.15-63.19-16.15l58.55-3.12C304.75,256.27,306.84,263.47,308.76,272.16z
+						"/>
+						<path class="st7" d="M246.13,292.35c4.23-5.47,6.16-14.67,2.35-33.18c12.57,14.22,31.26,17.54,58.66,5.36
+						c0,0,17.82-6.97,13.74-25.14c-3.69-16.42-17.43-25.14-28.16-11.73c-24.34-7.1-48.27-8.38-58.99,13.74c0,0-34.19,17.76-5.03,46.59
+						L246.13,292.35z"/>
+						<path class="st1" d="M172.39,585.06c-1.01,1.4-4.69,29.75-4.69,29.75s-16.42,15.4-5.36,24.85c11.06,9.45,24.47,9.1,30.84,2.1
+						c2.22-6.84,2.39-14.85-0.34-24.5l6.37-31.5L172.39,585.06z"/>
+						<path class="st4" d="M230.38,472.68l-8.04,121.34c44.91-2.01,75.08-16.76,75.08-16.76c3.9-72.42-5.4-153.45-34.06-226.33
+						c-72.8,27.05-93.33,116.69-104.13,249.89l42.65,4.95L230.38,472.68z"/>
+						<path class="st1" d="M246.8,304.42c-13.7,4.88-22.45,3.78-23.18-9.31c-0.42-7.51,7.32-13.5,14.14-10.32
+						c2.96,1.38,5.72,3.98,8.37,7.57L246.8,304.42z"/>
+						<path d="M287.63,717.77c1.81-6.64,3.84-13.2,5.93-19.74c2.04-6.56,4.35-13.02,6.51-19.54c2.28-6.47,4.61-12.93,7.01-19.36
+						c2.46-6.41,4.94-12.82,7.7-19.12l1.48,0.52c-1.76,6.66-3.81,13.21-5.87,19.76c-2.17,6.65-4.28,12.91-6.56,19.52
+						c-2.36,6.44-4.58,12.94-7.07,19.34c-2.44,6.42-4.93,12.82-7.65,19.14L287.63,717.77z"/>
+						<path class="st7" d="M238.59,297.15c-0.7-0.99-1.36-2-2.05-2.94c-0.71-0.91-1.37-1.86-2.17-2.5c-0.78-0.71-1.49-1.03-2.24-0.84
+						c-0.83,0.11-1.66,1-2.58,1.74l-0.78-0.49c0.51-1.17,1.11-2.48,2.68-3.18c1.62-0.73,3.49,0.09,4.45,1.02
+						c2,1.99,3.08,4.33,3.55,6.86L238.59,297.15z"/>
+						<path class="st4" d="M368,409.35l-23.68-69.63c-1.43,0.21-2.89,0.29-4.36,0.21c-10.05-0.52-20.43,0.71-31.99,3.45
+						c2.42,91.88,11.14,177,42.4,229.18c18.83-5.43,41.67-14.16,54.3-24.8c-10.11-34.3-22.02-83.2-31.02-126.38L368,409.35z"/>
+					</g>
+				</g>
+			</svg>
+		</div>
+		<div id="victorymsg">
+			<h2>GRACIAS POR PARTICIPAR</h2>
+			<div class="feliz">¡Felicitaciones has obtenido conocimientos millonarios!</div>	
+			<div id="gold-silver">Eres una persona comprometida con el proceso de Acreditación Institucional Multicampus.</div>
+			<div class="final-scoring">Su puntaje final es: <span id="puntajefinal">0</span><br>
+			Su tiempo de juego: <span id="tiempofinal">0</span></div>
 		</div>
 	</div>
 
-	<div id="intro">
-	</div>
 
 	<div id="juegocalidad">
-		
 		<div id="controlarea">
 	
 			<div id="temporizador">Su tiempo en el juego: <span id="timer">0:00</span></div>
@@ -79,7 +201,7 @@
 
 		<div id="logo">
 			#ViveLaReacreditación 
-			<img src="images/logo_juego.png">
+			<img src="images/logo_sedeprincipal.svg">
 		</div>
 
 		<div id="display">

@@ -1,0 +1,189 @@
+#start--game,
+#incorrecto,
+#correcto {
+
+	.animation-element {
+		@include full-size;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		overflow:hidden;
+
+		img {
+			position: absolute;
+			@include full-size;
+			top: 0;
+			left: 0;
+		}
+
+		>div.start {
+			position: absolute;
+			transition: all;
+			width: 1rem;
+			height: 1rem;
+			animation: startGame 10s ease-in forwards infinite;
+			border: solid .1rem var(--prussian-blue);
+			transform-origin: top left;
+			transform: scale(0) rotate(0deg) translate(-50%, -50%);
+			animation-delay: calc(var(--animation-size) * .7s);	
+		}	
+
+		>div.inc {
+			width: .1rem;
+			height: 100%;
+			position: relative;
+			background: linear-gradient(to bottom, rgba(255,255,255, 0.4), rgba(255,255,255,0.2));
+
+			&::before,
+			&::after {
+				content: "";
+				position: absolute;
+				height: .3rem;
+				width: .3rem;
+				top: 0;
+				left: -0.1rem;
+				background-color:var(--white);
+				border-radius:50%;
+				box-shadow: 0 0 .2rem .3rem var(--white);
+				animation: rainDrop 6s ease-in forwards infinite;
+				animation-delay: calc(var(--delay) * .5s);
+				opacity: .5;
+			}
+
+			&::after {
+				animation-delay: calc(var(--delay) * 1.7s);
+			}
+		}
+
+		>div.corr {
+			position: absolute;
+			width: .5rem;
+			height: .5rem;
+			border-radius: 50%;
+			background-color: var(--white);
+			animation: fly 6s ease-in forwards infinite;
+			animation-delay: calc(var(--delay) * .3s);
+			box-shadow: 0 0 .2rem .3rem var(--white);
+			opacity: .5;
+			bottom:-2rem;
+		}
+
+	}
+
+}
+
+#start--game {
+
+	.animation-element >div.start {
+		@include animation-start-function;
+	}
+}
+
+#incorrecto {
+
+	.animation-element {
+		@include flex-display;
+
+		img {
+			opacity: 0.05;
+		}
+	}
+}
+
+#correcto {
+
+	.animation-element >div.corr {
+		@include animation-corr-function;
+	}
+}
+
+#victory {
+
+	#bg-circle {
+		transform: translateY(-20%);
+		opacity: 0;
+		animation: champDrop 3s ease forwards;
+	}
+
+	#ganador {
+		opacity: 0;
+		animation: champFade 2s ease forwards;
+		animation-delay: 1.5s;
+	}
+
+	g#brazo-anim-pos1 {
+		transform:rotate(0deg);
+		transform-origin: 46% 33%;
+		animation: champArm 2s ease forwards infinite;
+	}
+}
+
+    	
+
+
+@keyframes startGame {
+	0% {
+		opacity: 0;
+		transform: scale(0) rotate(0deg) translate(-50%, -50%);
+	}
+	100% {
+		transform:scale(calc(var(--animation-size) * 5)) rotate(960deg) translate(-50%, -50%);
+		opacity: 0.8;
+	}
+}
+
+@keyframes rainDrop {
+	0% {
+		top: 0;
+		opacity: .5;
+	}
+	100% {
+		top: 100%;
+		opacity: 1;
+	}
+}
+
+@keyframes fly {
+	0% {
+		bottom:-2rem;
+	}
+	100% {
+		bottom:100%;
+	}
+
+}
+
+@keyframes champArm {
+	0% {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform-origin: 47% 33%;
+		transform: rotate(25deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
+
+@keyframes champFade {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+
+}
+
+@keyframes champDrop {
+	from {
+		transform: translateY(-20%);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}

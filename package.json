@@ -5,8 +5,9 @@
   "browserslist": "last 10 versions",
   "main": "index.js",
   "scripts": {
-    "//": "build production",
+    "//": "development, front", 
     "develop:front": "node-sass sass/main.scss css/juego.css -w -r",
+    "//": "build production",
     "compile:frontend": "node-sass sass/main.scss sass/main.compile.css",
     "prefix:frontend": "postcss sass/main.compile.scss --use autoprefixer -o sass/main.prefix.css",
     "compress:frontend": "node-sass sass/main.prefix.scss juego.css --output-style compressed",

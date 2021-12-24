@@ -1,0 +1,44 @@
+@mixin full-size {
+	height: 100%;
+	width: 100%;
+}
+@mixin flex-display {
+	display: flex;
+	justify-content: space-evenly;
+}
+@mixin flex-display-row {
+	display: flex;
+	justify-content: space-evenly;
+	flex-flow: row wrap;
+}
+@mixin flex-display-centered {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+@mixin flex-display-centered-row {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+}
+@mixin image-block {
+	display:inline;
+	vertical-align:middle
+}
+@mixin animation-start-function {
+	@for $i from 1 through 10 {
+	  &:nth-child(#{$i}) {
+	  	top: random(90) + vh;
+	  	left: random(90) + vw;
+	  }
+	}
+}
+
+@mixin animation-corr-function {
+	@for $i from 1 through 20 {
+	  &:nth-child(#{$i}) {
+	  	left: random(90) + vw;
+	  }
+	}
+}

@@ -1,0 +1,165 @@
+@media screen and (min-width:1600px) {
+	body { font-size:2.4rem; }
+}
+@media screen and (max-width:1300px) {
+	body { font-size:1.8rem; }
+}
+@media screen and (max-width:1200px) {
+	body { font-size:1.6rem; }
+}
+@media screen and (max-width:1100px) {
+	body { font-size:1.4rem; }
+}
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+	body { font-size: 2.4rem; }
+
+	#juegocalidad {
+		#display {
+			margin-top: 2rem;
+		}
+		#pregunta {
+			font-size: 4rem;
+		}
+		.respclic {
+			font-size: 3rem;
+		}
+		#controlarea {
+			font-size: 2.2rem;
+		}
+	}
+
+	#incorrecto,
+	#correcto {
+		background-size: cover;
+	}
+	
+}
+
+@media screen and (max-width:768px), screen and (max-width: 1024px) and (orientation: portrait) {
+	#start--game > div {
+		width: 75%;
+	}
+
+	#juegocalidad {
+
+		#controlarea {
+			width: 98%;
+			margin-right: 2%;
+		}
+
+		#logo img {
+			width: 25%;
+		}
+
+		#display {
+
+			img {
+				display: none;
+			}
+		
+			.pc {
+				position: relative;
+				
+				>div {
+					padding: 2rem;
+					background-color: var(--rich-black);
+					border-radius: 1rem;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 450px) and (orientation: portrait) {
+	body { font-size: 1.4rem; }
+
+	#start--game {
+		position:fixed;
+	}
+
+	#juegocalidad {
+
+		height: 120%;
+
+		display: grid;
+		grid-template-columns: 1fr;
+
+		#logo {
+			margin-bottom: -3rem;
+			justify-content: start;
+			grid-row-start: 1;
+		}
+
+		#display {
+			margin-top: 0rem;
+		}
+		#pregunta {
+			font-size: 2rem;
+		}
+		.respclic {
+			font-size: 1rem;
+		}
+		#controlarea {
+			position:relative;
+			@include flex-display-row;
+			font-size: 1rem;
+
+			>div {
+				position:relative;
+				display: inline-block;
+				max-height: 4rem;
+			}
+			#temporizador {
+				@include flex-display-centered;
+			}
+			#score {
+				height: 110%;
+			}
+		}
+	}
+
+	#incorrecto,
+	#correcto {
+		background-size: cover;
+	}
+	
+	#final {
+		flex-flow: column;
+
+		>div#victory {
+			margin-bottom: 1rem;
+			svg {
+				width: 50%;
+			}
+		}
+	}
+
+}
+
+@media screen and (max-width:320px) {
+	body { font-size:1.2rem; }
+
+	#juegocalidad {
+		#display {
+			margin-top: .5rem;
+		}
+		#pregunta {
+			font-size: 1.5rem;
+		}
+		.respclic {
+			font-size: 1rem;
+		}
+		#controlarea {
+			font-size: .8rem;
+		}
+	}
+
+	#final {
+		>div#victory {
+
+			svg {
+				width: 40%;
+			}
+		}
+	}
+}
