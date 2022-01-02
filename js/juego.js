@@ -3,52 +3,110 @@
 
 //// 1. Sección para Variables globales
 
-const xmlhttp = new XMLHttpRequest(),
-	  loadCircle = document.querySelector('#loader--circle'),
-	  loadPath = document.querySelector('#loader--chulo'),
-	  areaRespuesta = document.querySelector('#respuestas'),
-	  startBtn = document.querySelector('#start-btn'),
-	  puntajeActual = document.querySelector('#puntos'), 
-	  ayuda = document.querySelector('#ayuda5050'),
-	  pregarea = document.querySelector('#pregunta'), 
-	  bien = document.querySelector('#correcto'), 
-	  mal = document.querySelector('#incorrecto'), 
-	  final  = document.querySelector('#final'), 
-	  finTime = document.querySelector('#tiempofinal'), 
-	  finPunt = document.querySelector('#puntajefinal'), 
-	  aprender = document.querySelector('#aprender');
+const loadCircle = document.querySelector('#loader--circle'),
+		  loadPath = document.querySelector('#loader--chulo'),
+		  loaderArea = document.querySelector('#loader'),
+		  areaRespuesta = document.querySelector('#respuestas'),
+		  startBtn = document.querySelector('#start-btn'),
+		  puntajeActual = document.querySelector('#puntos'), 
+		  ayuda = document.querySelector('#ayuda5050'),
+		  pregarea = document.querySelector('#pregunta'), 
+		  bien = document.querySelector('#correcto'), 
+		  mal = document.querySelector('#incorrecto'), 
+		  final  = document.querySelector('#final'), 
+		  finTime = document.querySelector('#tiempofinal'), 
+		  finPunt = document.querySelector('#puntajefinal'), 
+		  aprender = document.querySelector('#aprender');
 
 let	cuestionarioObj = '',
-	cuestionario = [],
-	cuestionarioLen,
-	number = '', 
-	puntaje = 0,
-	currentAyuda = [0, 1, 2, 3]; // diseñado el 50/50 a base de 4 preguntas a futuro pensar en solución dinámica
+		cuestionario = [],
+		cuestionarioLen,
+		number = '', 
+		puntaje = 0,
+		currentAyuda = [0, 1, 2, 3]; // diseñado el 50/50 a base de 4 preguntas a futuro pensar en solución dinámica
 	
 
-//// 2. Sección buscar archivo cuestionario
+//// 2. Sección preaload
+const loadQuestionario = fetch('json/preguntas.json')
+												 .then(data => {
+												 	if(!data.ok) throw new Error(`El cuestionario no pudo ser cargado, ${data.status}`);
+												 	const response =  data.json();
+												 	return response
+												 })
+												 .then(response => {
+												 	cuestionarioObj = response;
+									       	cuestionario = cuestionarioObj.Cuestionario;
+									     		cuestionarioLen = cuestionario.length;
+												 	//console.log('questionario termino de cargar');
+												 })
+												 .catch(err => console.log(err.message))
+							
+const toPreload = (['images/fondo_bien.jpg',
+										'images/pregunta-02.png',
+										'images/pregunta-04.png']);
 
-xmlhttp.onreadystatechange = function() {
-	if(this.readyState == 4 && this.status == 200) {
-        cuestionarioObj = JSON.parse(this.responseText);
-        cuestionario = cuestionarioObj.Cuestionario;
-        cuestionarioLen = cuestionario.length;
-        setTimeout(function() {
-        	animateLoader(loadPath, false, 2, 0.7);
-        	loadPath.classList.remove('hid');
-        	setTimeout(function() {
-	        	document.querySelector('#loader').classList.add('hid');
-	        }, 2000)
-        }, 1000)
+const imageLoader = function(imagePath) {
+	return new Promise(function(resolve, reject) {
+		let image = document.createElement('img');
+			  image.src = imagePath;
+		image.addEventListener('load', () => {
+			loaderArea.appendChild(image).style.display = 'none';
+			resolve(image)
+		} )
+		image.addEventListener('error', () => reject(new Error(`Image not found 🙈`)))
+	})
+}
+
+const wait = function(seconds) {
+	return new Promise(function(resolve) {
+		setTimeout(resolve, seconds * 1000);
+	})
+}
+
+const loadAll = async function(imgArr) {
+	try {
+		const imgs = imgArr.map(async img => await imageLoader(img)),
+		      imgsElems = await Promise.all(imgs)
+		      .then(() => {
+		      	wait(2)
+		      	.then(()=> {
+		      		animateLoader(loadPath, false, 2, 0.7);
+		        	loadPath.classList.remove('hid');	
+		      	})
+		        wait(3)
+		        .then(() => {
+		        	loaderArea.classList.add('hid');
+		        })	
+		      });
+		
+	} catch(err) {
+		console.log(err)
+	}
+}
+
+loadAll(toPreload);
+
+// forma antigua
+// xmlhttp.onreadystatechange = function() {
+// 	if(this.readyState == 4 && this.status == 200) {
+//         cuestionarioObj = JSON.parse(this.responseText);
+//         cuestionario = cuestionarioObj.Cuestionario;
+//         cuestionarioLen = cuestionario.length;
+//         setTimeout(function() {
+//         	animateLoader(loadPath, false, 2, 0.7);
+//         	loadPath.classList.remove('hid');
+//         	setTimeout(function() {
+// 	        	document.querySelector('#loader').classList.add('hid');
+// 	        }, 2000)
+//         }, 1000)
         
-        //console.log(cuestionarioObj);
-    } else if(this.readyState == 4 && this.status != 200){
-    	console.log(`Error: ${this.statusText}`);
-    } 
-};
-xmlhttp.open("GET", "json/preguntas.json", true); // url del cuestionario y filename
-xmlhttp.send();
-
+//         //console.log(cuestionarioObj);
+//     } else if(this.readyState == 4 && this.status != 200){
+//     	console.log(`Error: ${this.statusText}`);
+//     } 
+// };
+// xmlhttp.open("GET", "json/preguntas.json", true); // url del cuestionario y filename
+// xmlhttp.send();
 
 //// 3. Funcion para seleccionar preguntas, elminiar esa pregunta para no repetir y cuando no haya más preguntas terminar el juego. 
 

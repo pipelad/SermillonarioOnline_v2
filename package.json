@@ -5,8 +5,9 @@
   "browserslist": "last 10 versions",
   "main": "index.js",
   "scripts": {
-    "//": "development, front", 
+    "//": "develop",
     "develop:front": "node-sass sass/main.scss css/juego.css -w -r",
+    "devserver": "live-server",
     "//": "build production",
     "compile:frontend": "node-sass sass/main.scss sass/main.compile.css",
     "prefix:frontend": "postcss sass/main.compile.css --use autoprefixer -o sass/main.prefix.css",
@@ -15,7 +16,9 @@
   },
   "author": "Andrés Restrepo",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "live-server": "^1.2.1"
+  },
   "devDependencies": {
     "autoprefixer": "^10.4.0",
     "concat": "^1.0.3",
