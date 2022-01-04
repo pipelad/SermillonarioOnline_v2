@@ -319,6 +319,20 @@ body {
     text-align: left;
     text-shadow: none;
     font-size: 1.6rem; }
+    #final > div#victorymsg #btn-wrap {
+      margin-top: 1.5rem; }
+    #final > div#victorymsg #restart-btn {
+      display: inline-block;
+      padding: 2rem;
+      background-color: var(--white);
+      color: var(--oxford-blue);
+      cursor: pointer;
+      border-radius: 2rem;
+      font-size: 2.4rem;
+      text-transform: uppercase;
+      font-weight: 700; }
+      #final > div#victorymsg #restart-btn:hover, #final > div#victorymsg #restart-btn:focus {
+        background-color: var(--yelow); }
     #final > div#victorymsg h2 {
       font-size: 4.4rem;
       background: linear-gradient(to right, var(--web-gold), var(--white));
@@ -416,44 +430,44 @@ body {
     bottom: -2rem; }
 
 #start--game .animation-element > div.start:nth-child(1) {
-  top: 70vh;
-  left: 75vw; }
-
-#start--game .animation-element > div.start:nth-child(2) {
-  top: 14vh;
-  left: 4vw; }
-
-#start--game .animation-element > div.start:nth-child(3) {
-  top: 57vh;
-  left: 61vw; }
-
-#start--game .animation-element > div.start:nth-child(4) {
-  top: 5vh;
-  left: 6vw; }
-
-#start--game .animation-element > div.start:nth-child(5) {
-  top: 88vh;
-  left: 8vw; }
-
-#start--game .animation-element > div.start:nth-child(6) {
-  top: 59vh;
-  left: 77vw; }
-
-#start--game .animation-element > div.start:nth-child(7) {
-  top: 25vh;
-  left: 65vw; }
-
-#start--game .animation-element > div.start:nth-child(8) {
-  top: 47vh;
-  left: 14vw; }
-
-#start--game .animation-element > div.start:nth-child(9) {
-  top: 43vh;
+  top: 7vh;
   left: 78vw; }
 
+#start--game .animation-element > div.start:nth-child(2) {
+  top: 80vh;
+  left: 49vw; }
+
+#start--game .animation-element > div.start:nth-child(3) {
+  top: 38vh;
+  left: 83vw; }
+
+#start--game .animation-element > div.start:nth-child(4) {
+  top: 42vh;
+  left: 84vw; }
+
+#start--game .animation-element > div.start:nth-child(5) {
+  top: 71vh;
+  left: 5vw; }
+
+#start--game .animation-element > div.start:nth-child(6) {
+  top: 26vh;
+  left: 39vw; }
+
+#start--game .animation-element > div.start:nth-child(7) {
+  top: 74vh;
+  left: 37vw; }
+
+#start--game .animation-element > div.start:nth-child(8) {
+  top: 58vh;
+  left: 87vw; }
+
+#start--game .animation-element > div.start:nth-child(9) {
+  top: 42vh;
+  left: 1vw; }
+
 #start--game .animation-element > div.start:nth-child(10) {
-  top: 30vh;
-  left: 81vw; }
+  top: 5vh;
+  left: 15vw; }
 
 #incorrecto .animation-element {
   display: flex;
@@ -462,64 +476,64 @@ body {
     opacity: 0.05; }
 
 #correcto .animation-element > div.corr:nth-child(1) {
-  left: 38vw; }
+  left: 13vw; }
 
 #correcto .animation-element > div.corr:nth-child(2) {
-  left: 5vw; }
-
-#correcto .animation-element > div.corr:nth-child(3) {
-  left: 30vw; }
-
-#correcto .animation-element > div.corr:nth-child(4) {
-  left: 55vw; }
-
-#correcto .animation-element > div.corr:nth-child(5) {
   left: 6vw; }
 
+#correcto .animation-element > div.corr:nth-child(3) {
+  left: 86vw; }
+
+#correcto .animation-element > div.corr:nth-child(4) {
+  left: 43vw; }
+
+#correcto .animation-element > div.corr:nth-child(5) {
+  left: 4vw; }
+
 #correcto .animation-element > div.corr:nth-child(6) {
-  left: 14vw; }
+  left: 60vw; }
 
 #correcto .animation-element > div.corr:nth-child(7) {
-  left: 33vw; }
+  left: 71vw; }
 
 #correcto .animation-element > div.corr:nth-child(8) {
-  left: 28vw; }
+  left: 50vw; }
 
 #correcto .animation-element > div.corr:nth-child(9) {
-  left: 79vw; }
+  left: 15vw; }
 
 #correcto .animation-element > div.corr:nth-child(10) {
-  left: 27vw; }
+  left: 6vw; }
 
 #correcto .animation-element > div.corr:nth-child(11) {
-  left: 29vw; }
+  left: 55vw; }
 
 #correcto .animation-element > div.corr:nth-child(12) {
-  left: 25vw; }
+  left: 57vw; }
 
 #correcto .animation-element > div.corr:nth-child(13) {
-  left: 72vw; }
+  left: 75vw; }
 
 #correcto .animation-element > div.corr:nth-child(14) {
-  left: 37vw; }
+  left: 9vw; }
 
 #correcto .animation-element > div.corr:nth-child(15) {
-  left: 36vw; }
+  left: 35vw; }
 
 #correcto .animation-element > div.corr:nth-child(16) {
-  left: 56vw; }
+  left: 43vw; }
 
 #correcto .animation-element > div.corr:nth-child(17) {
-  left: 84vw; }
+  left: 16vw; }
 
 #correcto .animation-element > div.corr:nth-child(18) {
-  left: 88vw; }
+  left: 33vw; }
 
 #correcto .animation-element > div.corr:nth-child(19) {
-  left: 11vw; }
+  left: 61vw; }
 
 #correcto .animation-element > div.corr:nth-child(20) {
-  left: 18vw; }
+  left: 46vw; }
 
 #victory #bg-circle {
   transform: translateY(-20%);
